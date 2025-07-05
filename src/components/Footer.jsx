@@ -9,11 +9,11 @@ function Footer() {
         </div>
         <div className="flex gap-4">
           <a href="mailto:contacto@nf.com.uy" className="hover:text-light-accent dark:hover:text-dark-accent">
-            contacto@nf.com.uy
+            nestor@nfinstalaciones.net
           </a>
           <span>|</span>
           <a href="tel:+59899999999" className="hover:text-light-accent dark:hover:text-dark-accent">
-            +598 99 999 999
+            +598 92 500 444
           </a>
         </div>
       </div>
