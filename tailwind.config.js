@@ -13,24 +13,25 @@ export default {
     extend: {
       colors: {
         light: {
-          bg: "#f9fafb",           // gris claro, fondo general
-          card: "#ffffff",         // blanco puro
-          text: "#1f2937",         // gris muy oscuro (tailwind slate-800)
-          accent: "#1e3a8a",       // azul petróleo profundo
-          secondary: "#64748b",    // gris azulado (slate-500)
-          highlight: "#4b5563",    // gris medio (slate-600)
+          bg: "#f0f4f8",          // azul muy claro, casi blanco azulado
+          card: "#ffffff",        // blanco puro para tarjetas
+          text: "#374151",        // gris oscuro (slate-700)
+          accent: "#2563eb",      // azul fuerte (blue-600)
+          secondary: "#6b7280",   // gris medio (gray-500)
+          highlight: "#9ca3af",   // gris claro (gray-400)
         },
         dark: {
-          bg: "#111827",           // gris oscuro (slate-900)
-          card: "#1f2937",         // gris más claro (slate-800)
-          text: "#f3f4f6",         // gris muy claro (slate-100)
-          accent: "#2563eb",       // azul sobrio (blue-600)
-          secondary: "#94a3b8",    // gris azulado claro (slate-400)
-          highlight: "#6b7280",    // gris medio
+          bg: "#1e293b",          // azul gris oscuro (slate-800)
+          card: "#334155",        // azul gris más claro (slate-700)
+          text: "#f9fafb",        // casi blanco para texto
+          accent: "#3b82f6",      // azul brillante (blue-500)
+          secondary: "#9ca3af",   // gris claro (gray-400)
+          highlight: "#64748b",   // gris azulado medio (slate-500)
         },
       },
+      
       boxShadow: {
-        glass: "0 8px 24px rgba(0,0,0,0.2)",
+        glass: "0 8px 24px rgba(0,0,0,0.15)", // sombra suave y fresca
       },
     },
   },

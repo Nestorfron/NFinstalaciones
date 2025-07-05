@@ -2,17 +2,15 @@ import React from "react";
 
 function ProductCard({ name, description, icon }) {
   return (
-    <div className="bg-light-card dark:bg-dark-card border border-light-accent dark:border-dark-accent rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-        
-        <div className="flex justify-center items-center p-2">
-          {icon}
-          <h4 className="text-lg font-semibold text-light-accent dark:text-dark-accent mb-1 pl-2">{name}</h4>
-        </div>
-        <div className="p-4">
-          <p className="text-sm text-light-text dark:text-dark-text">{description}</p>
-        </div>
-        
+    <div className="relative bg-light-card dark:bg-dark-card text-light-text dark:text-dark-text shadow-glass rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg duration-300 w-24 h-24 flex items-center justify-center cursor-pointer group mx-auto my-5">
+      {/* Icono */}
+      <div className="text-5xl select-none">{icon}</div>
+
+      {/* Nombre que aparece solo al hacer hover en el padre */}
+      <div className="absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center text-center px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none select-none">
+        <span className="font-semibold text-sm">{name}</span>
       </div>
+    </div>
   );
 }
 
