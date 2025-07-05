@@ -12,26 +12,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        light: {
-          bg: "#f0f4f8",          // azul muy claro, casi blanco azulado
-          card: "#ffffff",        // blanco puro para tarjetas
-          text: "#374151",        // gris oscuro (slate-700)
-          accent: "#2563eb",      // azul fuerte (blue-600)
-          secondary: "#6b7280",   // gris medio (gray-500)
-          highlight: "#9ca3af",   // gris claro (gray-400)
-        },
-        dark: {
-          bg: "#1e293b",          // azul gris oscuro (slate-800)
-          card: "#334155",        // azul gris más claro (slate-700)
-          text: "#f9fafb",        // casi blanco para texto
-          accent: "#3b82f6",      // azul brillante (blue-500)
-          secondary: "#9ca3af",   // gris claro (gray-400)
-          highlight: "#64748b",   // gris azulado medio (slate-500)
-        },
+        // Light theme colores super vivos
+        "light-bg": "#d0e6ff",        // azul pastel muy brillante
+        "light-card": "#ffffff",      // blanco puro para contraste fuerte
+        "light-text": "#1e40af",      // azul intenso oscuro para texto (blue-900)
+        "light-accent": "#1e3a8a",    // azul fuerte, vibrante (blue-900)
+        "light-secondary": "#2563eb", // azul vivo (blue-600)
+        "light-highlight": "#3b82f6", // azul eléctrico para destacar (blue-500)
+
+        // Dark theme colores más vibrantes
+        "dark-bg": "#121f4a",         // azul oscuro profundo, más saturado
+        "dark-card": "#1e2a78",       // azul medio oscuro, saturado
+        "dark-text": "#e0e7ff",       // azul muy claro para texto, casi blanco
+        "dark-accent": "#60a5fa",     // azul vibrante (blue-400)
+        "dark-secondary": "#93c5fd",  // azul pastel luminoso
+        "dark-highlight": "#bfdbfe",  // azul pastel claro, para highlights
       },
-      
       boxShadow: {
-        glass: "0 8px 24px rgba(0,0,0,0.15)", // sombra suave y fresca
+        glass: "0 8px 24px rgba(0,0,0,0.15)",
       },
     },
   },

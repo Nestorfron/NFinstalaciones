@@ -22,7 +22,7 @@ function Home() {
     <>
       {/* Header */}
       <header className="relative text-light-text dark:text-dark-text text-center min-h-[300px] md:min-h-[400px] overflow-hidden flex items-center justify-center py-8 md:py-12 px-4 bg-light-bg dark:bg-dark-bg">
-        {/* Fondo fijo usando div con background */}
+        {/* Fondo fijo solo en el header */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed blur-[2px] md:blur-sm scale-110 z-0"
           style={{ backgroundImage: `url(${fondo})` }}
@@ -30,6 +30,7 @@ function Home() {
         />
         {/* Capa oscura */}
         <div className="absolute inset-0 bg-black/50 z-0" />
+
         {/* Contenido */}
         <div className="relative z-10 max-w-screen-md">
           <img
@@ -37,7 +38,7 @@ function Home() {
             alt="logo"
             className="mx-auto mb-3 max-w-[100px] md:max-w-[140px]"
           />
-          <h1 className="text-2xl md:text-4xl font-bold mb-2 text-accent dark:text-accent drop-shadow-md">
+          <h1 className="text-2xl md:text-4xl font-bold mb-2 text-white dark:text-white">
             NF Instalaciones
           </h1>
           <p className="text-sm md:text-base text-white dark:text-white">
