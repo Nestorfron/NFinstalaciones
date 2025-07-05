@@ -12,21 +12,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Light theme colores super vivos
-        "light-bg": "#d0e6ff",        // azul pastel muy brillante
-        "light-card": "#ffffff",      // blanco puro para contraste fuerte
-        "light-text": "#1e40af",      // azul intenso oscuro para texto (blue-900)
-        "light-accent": "#1e3a8a",    // azul fuerte, vibrante (blue-900)
-        "light-secondary": "#2563eb", // azul vivo (blue-600)
-        "light-highlight": "#3b82f6", // azul eléctrico para destacar (blue-500)
-
-        // Dark theme colores más vibrantes
-        "dark-bg": "#121f4a",         // azul oscuro profundo, más saturado
-        "dark-card": "#1e2a78",       // azul medio oscuro, saturado
-        "dark-text": "#e0e7ff",       // azul muy claro para texto, casi blanco
-        "dark-accent": "#60a5fa",     // azul vibrante (blue-400)
-        "dark-secondary": "#93c5fd",  // azul pastel luminoso
-        "dark-highlight": "#bfdbfe",  // azul pastel claro, para highlights
+        light: {
+          bg: "#f0f4f8",
+          card: "#ffffff",
+          text: "#374151",
+          accent: "#2563eb",
+          secondary: "#6b7280",
+          highlight: "#9ca3af",
+        },
+        dark: {
+          bg: "#0f172a",          // azul muy oscuro, casi navy
+          card: "#1e293b",        // azul gris oscuro para tarjetas
+          text: "#cbd5e1",        // azul gris claro para texto
+          accent: "#60a5fa",      // azul suave y menos saturado para acentos
+          secondary: "#94a3b8",   // azul grisáceo suave
+          highlight: "#a3bffa",   // azul pastel claro para highlights
+        },
       },
       boxShadow: {
         glass: "0 8px 24px rgba(0,0,0,0.15)",
