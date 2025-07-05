@@ -13,22 +13,24 @@ export default {
     extend: {
       colors: {
         light: {
-          bg: "#fffde7",        // amarillo pastel claro
-          card: "#ffffff",      // blanco puro
-          text: "#1e1e1e",      // gris oscuro neutro
-          accent: "#ffca28",    // amarillo dorado vibrante
-          secondary: "#3f51b5", // índigo vibrante
+          bg: "#f9fafb",           // gris claro, fondo general
+          card: "#ffffff",         // blanco puro
+          text: "#1f2937",         // gris muy oscuro (tailwind slate-800)
+          accent: "#1e3a8a",       // azul petróleo profundo
+          secondary: "#64748b",    // gris azulado (slate-500)
+          highlight: "#4b5563",    // gris medio (slate-600)
         },
         dark: {
-          bg: "#1a1a2e",        // azul muy oscuro
-          card: "#16213e",      // azul oscuro
-          text: "#f3f4f6",      // gris claro
-          accent: "#ffeb3b",    // amarillo brillante
-          secondary: "#82b1ff", // azul celeste pastel
+          bg: "#111827",           // gris oscuro (slate-900)
+          card: "#1f2937",         // gris más claro (slate-800)
+          text: "#f3f4f6",         // gris muy claro (slate-100)
+          accent: "#2563eb",       // azul sobrio (blue-600)
+          secondary: "#94a3b8",    // gris azulado claro (slate-400)
+          highlight: "#6b7280",    // gris medio
         },
       },
       boxShadow: {
-        glass: "0 8px 24px rgba(0,0,0,0.3)",
+        glass: "0 8px 24px rgba(0,0,0,0.2)",
       },
     },
   },
