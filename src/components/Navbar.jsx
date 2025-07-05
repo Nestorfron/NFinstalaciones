@@ -23,11 +23,11 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-light-card dark:bg-dark-card shadow-sm sticky top-0 z-50">
+    <nav className="bg-light-card dark:bg-light-card shadow-sm sticky top-0 z-50">
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
         <div>
           <a href="#">
-            <img src={logo} alt="NF Instalaciones" className="h-10 md:h-12" />
+            <img src={logo} alt="NF Instalaciones" className="h-10 md:h-12 bg-white rounded-full" />
           </a>
         </div>
 
