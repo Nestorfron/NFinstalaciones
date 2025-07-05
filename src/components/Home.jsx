@@ -27,10 +27,10 @@ function Home() {
 
     emailjs
       .sendForm(
-        "service_nr7vuyw",     
+        "service_nr7vuyw",
         "template_aon0dho",
         form.current,
-        "2fzYvOqMl7kCbqgf6"      
+        "2fzYvOqMl7kCbqgf6"
       )
       .then(
         () => {
@@ -75,56 +75,28 @@ function Home() {
         </div>
       </header>
 
-      {/* Cámaras */}
+      {/* Sección Unificada: Cámaras, Alarmas y Mantenimiento */}
       <section className="bg-light-bg dark:bg-dark-bg px-4 py-12">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="text-xl md:text-2xl text-center font-bold text-accent dark:text-accent mb-8 drop-shadow-md">
-            Videovigilancia
+            Nuestros Productos y Servicios
           </h2>
-          <ProductGrid products={cameraProducts} />
-          <div className="text-center mt-6">
-            <a
-              href="#contact"
-              className="inline-block bg-white text-accent dark:bg-dark-card dark:text-accent font-semibold py-2 px-6 rounded-full shadow-md hover:shadow-lg transition text-center"
-            >
-              Más información
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Alarmas */}
-      <section className="bg-light-card dark:bg-dark-card px-4 py-12">
-        <div className="max-w-screen-xl mx-auto">
-          <h2 className="text-xl md:text-2xl text-center font-bold text-accent dark:text-accent mb-8 drop-shadow-md">
-            Alarmas
-          </h2>
-          <ProductGrid products={alarmProducts} />
-          <div className="text-center mt-6">
-            <a
-              href="#contact"
-              className="inline-block bg-white text-accent dark:bg-dark-bg dark:text-accent font-semibold py-2 px-6 rounded-full shadow-md hover:shadow-lg transition text-center"
-            >
-              Más información
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Mantenimiento */}
-      <section className="bg-light-bg dark:bg-dark-bg px-4 py-12">
-        <div className="max-w-screen-xl mx-auto">
-          <h2 className="text-xl md:text-2xl text-center font-bold text-accent dark:text-accent mb-8 drop-shadow-md">
-            Servicio y Mantenimiento
-          </h2>
-          <ProductGrid products={maintenanceServices} />
-          <div className="text-center mt-6">
-            <a
-              href="#contact"
-              className="inline-block bg-white text-accent dark:bg-dark-card dark:text-accent font-semibold py-2 px-6 rounded-full shadow-md hover:shadow-lg transition text-center"
-            >
-              Más información
-            </a>
+          <div className="overflow-x-auto">
+            <div className="flex gap-6">
+              {[{ title: "Videovigilancia", products: cameraProducts }, { title: "Alarmas", products: alarmProducts }, { title: "Mantenimiento", products: maintenanceServices }].map(({ title, products }, i) => (
+                <div
+                  key={i}
+                  className="bg-light-card dark:bg-dark-card rounded-lg shadow-md p-4 flex-shrink-0"
+                >
+                  <h3 className="text-lg font-semibold text-accent dark:text-accent mb-4 text-center">
+                    {title}
+                  </h3>
+                  <div className="grid gap-4 justify-center">
+                    <ProductGrid products={products} />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
