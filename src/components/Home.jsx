@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import ProductGrid from "../components/ProductGrid";
 import img from "../assets/logo.png";
 import fondo from "../assets/fondo.jpg";
@@ -16,23 +17,44 @@ import {
   FaCog,
   FaHeadset,
 } from "react-icons/fa";
+import WhatsAppButton from "./WhatsAppButton";
 
 function Home() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_nr7vuyw",     
+        "template_aon0dho",
+        form.current,
+        "2fzYvOqMl7kCbqgf6"      
+      )
+      .then(
+        () => {
+          alert("✅ Mensaje enviado correctamente.");
+          e.target.reset();
+        },
+        (error) => {
+          console.error("❌ Error al enviar:", error);
+          alert("Ocurrió un error al enviar el mensaje.");
+        }
+      );
+  };
+
   return (
     <>
       {/* Header */}
       <header className="relative text-light-text dark:text-dark-text text-center min-h-[300px] md:min-h-[400px] overflow-hidden flex items-center justify-center py-8 md:py-12 px-4 bg-light-bg dark:bg-dark-bg">
-        {/* Fondo fijo solo en el header */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed blur-[2px] md:blur-sm scale-110 z-0"
+          className="absolute inset-0 bg-cover bg-center blur-[2px] md:blur-sm scale-110 z-0"
           style={{ backgroundImage: `url(${fondo})` }}
           aria-hidden="true"
         />
-        {/* Capa oscura */}
         <div className="absolute inset-0 bg-black/50 z-0" />
-
-        {/* Contenido */}
-        <div className="relative z-10 max-w-screen-md">
+        <div id="home" className="relative z-10 max-w-screen-md">
           <img
             src={img}
             alt="logo"
@@ -53,7 +75,7 @@ function Home() {
         </div>
       </header>
 
-      {/* Sección: Cámaras */}
+      {/* Cámaras */}
       <section className="bg-light-bg dark:bg-dark-bg px-4 py-12">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="text-xl md:text-2xl text-center font-bold text-accent dark:text-accent mb-8 drop-shadow-md">
@@ -71,7 +93,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Sección: Alarmas */}
+      {/* Alarmas */}
       <section className="bg-light-card dark:bg-dark-card px-4 py-12">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="text-xl md:text-2xl text-center font-bold text-accent dark:text-accent mb-8 drop-shadow-md">
@@ -89,7 +111,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Sección: Servicio */}
+      {/* Mantenimiento */}
       <section className="bg-light-bg dark:bg-dark-bg px-4 py-12">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="text-xl md:text-2xl text-center font-bold text-accent dark:text-accent mb-8 drop-shadow-md">
@@ -107,7 +129,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Sección: Beneficios */}
+      {/* Beneficios */}
       <section className="bg-light-card dark:bg-dark-card px-6 py-12 sm:px-8 md:px-12 lg:px-16">
         <div className="max-w-screen-lg mx-auto">
           <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-center text-accent dark:text-accent mb-10 drop-shadow-md">
@@ -153,24 +175,20 @@ function Home() {
         </div>
       </section>
 
-      {/* Sección: Contacto */}
-      <section
-        id="contact"
-        className="bg-light-bg dark:bg-dark-bg px-4 py-12"
-      >
+      {/* Contacto */}
+      <section id="contact" className="bg-light-bg dark:bg-dark-bg px-4 py-12">
         <div className="max-w-xl mx-auto">
           <h2 className="text-xl md:text-2xl font-bold text-center text-accent dark:text-accent mb-8 drop-shadow-md">
             Contacto
           </h2>
-          <form className="space-y-6">
+          <form ref={form} onSubmit={sendEmail} className="space-y-6">
             <select
-              className="w-full p-3 rounded border border-accent bg-white dark:bg-dark-card text-text dark:text-text placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
+              name="tipo"
+              className="w-full p-3 rounded border border-accent bg-white dark:bg-dark-card text-text dark:text-text focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
               defaultValue=""
               required
             >
-              <option value="" disabled>
-                Tipo de consulta
-              </option>
+              <option value="" disabled>Tipo de consulta</option>
               <option value="camaras">Cámaras</option>
               <option value="alarmas">Alarmas</option>
               <option value="mantenimiento">Mantenimiento</option>
@@ -178,32 +196,37 @@ function Home() {
             </select>
 
             <input
+              name="nombre"
               type="text"
               placeholder="Nombre"
-              className="w-full p-3 rounded border border-accent bg-white dark:bg-dark-card text-text dark:text-text placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
+              className="w-full p-3 rounded border border-accent bg-white dark:bg-dark-card text-text dark:text-text focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
               required
             />
 
             <input
+              name="telefono"
               type="tel"
               placeholder="Teléfono"
-              className="w-full p-3 rounded border border-accent bg-white dark:bg-dark-card text-text dark:text-text placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
+              className="w-full p-3 rounded border border-accent bg-white dark:bg-dark-card text-text dark:text-text focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
               required
             />
 
             <input
+              name="email"
               type="email"
               placeholder="Email"
-              className="w-full p-3 rounded border border-accent bg-white dark:bg-dark-card text-text dark:text-text placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
+              className="w-full p-3 rounded border border-accent bg-white dark:bg-dark-card text-text dark:text-text focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition"
               required
             />
 
             <textarea
+              name="mensaje"
               rows="4"
               placeholder="Escribinos..."
-              className="w-full p-3 rounded border border-accent bg-white dark:bg-dark-card text-text dark:text-text placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition resize-none"
+              className="w-full p-3 rounded border border-accent bg-white dark:bg-dark-card text-text dark:text-text focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition resize-none"
               required
             />
+
             <button
               type="submit"
               className="bg-white text-accent dark:bg-dark-card dark:text-accent font-semibold py-2 px-6 rounded-full shadow-md hover:shadow-lg transition w-full md:w-auto"
@@ -213,6 +236,9 @@ function Home() {
           </form>
         </div>
       </section>
+
+      {/* WhatsApp flotante */}
+      <WhatsAppButton />
     </>
   );
 }
